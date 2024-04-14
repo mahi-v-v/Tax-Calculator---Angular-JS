@@ -1,0 +1,231 @@
+/*TOOLTIP CSS*/
+.tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Tooltip text */
+  .tooltip .tooltip-text {
+    visibility: hidden;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    width: 10vw;
+    bottom: 100%;
+    left: 10v;
+    margin-left: -5.65vw;
+   
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+  }
+
+  /* Show the tooltip text when you mouse over the tooltip container */
+  .tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 0.7;
+  }
+
+  .tooltip .tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%; /* At the bottom of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+    height: 5px;
+  }
+
+  .error-tooltip {
+    position: absolute;
+    left: 60%;
+    transform: translate(30%);
+    margin-top: 4px;
+  }
+  
+  /* Tooltip text */
+  .error-tooltip .error-tooltip-text {
+    visibility: hidden;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    width: 10vw;
+    bottom: 100%;
+    left: 10v;
+    margin-left: -5.65vw;
+   
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+  }
+
+  /* Show the tooltip text when you mouse over the tooltip container */
+  .error-tooltip:hover .error-tooltip-text {
+    visibility: visible;
+    opacity: 0.7;
+  }
+
+  .error-tooltip .error-tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%; /* At the bottom of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+    height: 5px;
+  }
+
+  .error-tooltip-new {
+    visibility: hidden;
+    position: absolute;
+    left: 60%;
+    transform: translate(30%);
+    margin-top: 4px;
+  }
+  
+  /* Tooltip text */
+  .error-tooltip-new .error-tooltip-text-new {
+    visibility: hidden;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    width: 10vw;
+    bottom: 100%;
+    left: 10v;
+    margin-left: -5.65vw;
+   
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+  }
+
+  /* Show the tooltip text when you mouse over the tooltip container */
+  .error-tooltip-new:hover .error-tooltip-text-new {
+    visibility: visible;
+    opacity: 0.7;
+  }
+
+  .error-tooltip-new .error-tooltip-text-new::after {
+    content: "";
+    position: absolute;
+    top: 100%; /* At the bottom of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+    height: 5px;
+  }
+
+
+  form{
+    visibility: visible;
+  }
+
+  label{
+    font-family: "poppins";
+    font-size: 20px;
+  }
+  img{
+    vertical-align: center;
+    width: 20px;
+  }
+
+.main-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ensure the container takes up the full viewport height */
+}
+
+.form-content {
+  visibility: visible;
+  border: solid gray 1px;
+  padding: 50px;
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.4); /* Adding a box shadow */
+}
+
+
+input{
+  font-size: 0.9rem;
+  font-family: "poppins";
+    margin-bottom: 2vh;
+    width: 100%;
+    height: 1.5rem;
+}
+
+button{
+  height: 20%;
+  width: 49.2%;
+}
+
+select{
+  font-size: 0.9rem;
+  font-family: "poppins";
+  height: 1.9rem;
+  width: 102.5%;
+}
+
+.modal-container{
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.4);
+  visibility: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  align-items: center;
+  padding: 100px;
+  border: solid black 1px;
+}
+
+option:nth-child(1){
+  color: gray;
+}
+
+p{
+  font-family: "poppins";
+}
+
+span{
+  font-family: "poppins";
+}
+
+button{
+  font-family: poppins;
+  height: 2rem;
+  background-color: white;
+  color: black;
+  border: solid 1px rgba(0, 0, 0, 0.5);  
+}
+
+button:hover{
+  background-color: lightgreen;
+  transform: scale(1.05);
+  transition: 0.2s;
+}
+
+.reset-button{
+  font-family: poppins;
+  height: 2rem;
+  background-color: white;
+  color: black;
+  border: solid 1px rgba(0, 0, 0, 0.5); 
+}
+
+.reset-button:hover{
+
+  background-color: rgb(235, 135, 135);
+  transform: scale(1.05);
+  transition: 0.2s;
+}

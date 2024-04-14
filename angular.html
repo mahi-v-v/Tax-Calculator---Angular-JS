@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Calculator</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body ng-app="myApp">
+    <nav>...</nav>
+    <div class="main-container" ng-controller="myController">
+        <div class="form-content">
+            <form>
+                <label for="annual_income">Enter Gross Annual Income</label>
+                <div class="tooltip"> 
+                    <img src="questionIcon.png" alt="information icon">
+                    <span class="tooltip-text">Enter the total Annual Income you receive per annum</span>
+                </div>
+                <br>
+                <div class="error-icon_container" >
+                    <div class="error-tooltip" ng-show="showTooltip1">
+                        <img class="error-icon" src="errorIcon.png" alt="icon">
+                        <span class="error-tooltip-text">{{ errorMessage1 }}</span>
+                    </div>
+                    <input type="text" name="annual_income" placeholder="Enter Gross Annual Income" class="annual-income" ng-model="annualIncome" ng-change="verifyAnnualIncome()">  
+                </div>
+                <br>
+                <label for="extra_income">Enter Extra Income</label>
+                <div class="tooltip"> 
+                    <img src="questionIcon.png" alt="information icon">
+                    <span class="tooltip-text">Enter the total Extra Income you receive from other sources per annum</span>
+                </div>
+                <br>
+                <div class="error-icon_container" >
+                    <div class="error-tooltip" ng-show="showTooltip2">
+                        <img class="error-icon" src="errorIcon.png" alt="icon">
+                        <span class="error-tooltip-text">{{ errorMessage2 }}</span>
+                    </div>
+                    <input type="text" name="extra_income" placeholder="Enter Extra Annual Income" class="extra-income" ng-model="extraIncome" ng-change="verifyExtraIncome()">
+                </div>
+                <br>
+                <label for="age">Enter Age group</label>
+                <div class="tooltip"> 
+                    <img src="questionIcon.png" alt="information icon">
+                    <span class="tooltip-text">Enter what age group you belong to</span>
+                </div>
+                <br>
+                <div class="error-icon_container" >
+                    <div class="error-tooltip-new">
+                        <img class="error-icon" src="errorIcon.png" alt="icon">
+                        <span class="error-tooltip-text-new">This input is mandatory</span>
+                    </div>
+                    <select  id="age" ng-model="age" onchange="selectionChecker()">
+                        <option value="0">Select an option</option>
+                        <option value="1">Below 40 years</option>
+                        <option value="2">Between 40 to 60 years (inclusive)</option>
+                        <option value="3">Above 60</option>
+                    </select>
+                </div>
+                <br>
+                <br>
+                <label for="deduction">Enter Total Applicable Deduction</label>
+                <div class="tooltip"> 
+                    <img src="questionIcon.png" alt="information icon">
+                    <span class="tooltip-text">Enter the total deductions from your annual income</span>
+                </div>
+                <br>
+                <div class="error-icon_container" >
+                    <div class="error-tooltip" ng-show="showTooltip3">
+                        <img class="error-icon" src="errorIcon.png" alt="icon">
+                        <span class="error-tooltip-text">{{ errorMessage3 }}</span>
+                    </div>
+                    <input type="text" name="deduction" placeholder="Enter Deduction" class="deduction" ng-model="deduction" ng-change="verifyDeduction()">
+                </div>
+                <br>
+                <button type="button" id="submitBtn" onclick="validateInputs()">Submit</button>
+                <button type="reset" class="reset-button">Reset</button>
+            </form>
+            <div class="modal-container">
+                <p>Your overall Income will be</p>
+                <span id="finalAmountSpan"></span>
+                <p>after tax deduction</p>
+                <button id="closeBtn" onclick="setModalHidden(); setFormVisible();">Close</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="angular.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
